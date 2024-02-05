@@ -22,6 +22,18 @@ public class ProductRepository {
         return productData.remove(product);
     }
 
+    public Product edit(Product product) {
+        for (int i = 0; i < productData.size(); i++) {
+            Product existingProduct = productData.get(i);
+            if (existingProduct.getProductId().equals(product.getProductId())) {
+                productData.set(i, product); // Update the product in the list
+                return product;
+            }
+        }
+        return null; // Return null if the product with the specified ID is not found
+    }
+
+
     public Iterator<Product> findAll() {
         return productData.iterator();
     }

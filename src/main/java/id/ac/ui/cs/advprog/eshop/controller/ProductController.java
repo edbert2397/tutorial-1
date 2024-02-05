@@ -43,4 +43,27 @@ public class ProductController {
         return "redirect:/product/list";
     }
 
+    @GetMapping("/edit/{id}")
+    public String editProductPage(@PathVariable String id, Model model) {
+        Product product = service.get(id);
+        model.addAttribute("product", product);
+        return "editProduct";
+    }
+
+    @PostMapping("/edit/{id}")
+    public String editProductPost(@PathVariable String id, @ModelAttribute Product updatedProduct) {
+        Product product = service.get(id);
+        if (product != null) {
+            // Update the product details
+            product.setProductName(updatedProduct.getProductName());
+            product.setProductQuantity(updatedProduct.getProductQuantity());
+
+            // Save the updated product
+            service.edit(product);
+        }
+        return "redirect:/product/list";
+    }
+
+
+
 }

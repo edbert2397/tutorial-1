@@ -27,6 +27,13 @@ public class ProductServiceImpl implements ProductService {
         }
         return false;
     }
+    public Product edit(Product product) {
+        if (product != null) {
+            // You may add validation or additional checks here if needed
+            return productRepository.edit(product);
+        }
+        return null;
+    }
     public Product get(String id) {
         Iterator<Product> products = productRepository.findAll();
         while (products.hasNext()) {
@@ -44,4 +51,5 @@ public class ProductServiceImpl implements ProductService {
         productIterator.forEachRemaining(allProduct::add);
         return allProduct;
     }
+
 }
