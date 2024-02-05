@@ -20,7 +20,23 @@ public class ProductServiceImpl implements ProductService {
         productRepository.create(product);
         return product;
     }
-
+    @Override
+    public boolean delete(Product product) {
+        if(product != null){
+            return productRepository.delete(product);
+        }
+        return false;
+    }
+    public Product get(String id) {
+        Iterator<Product> products = productRepository.findAll();
+        while (products.hasNext()) {
+            Product tmp = products.next();
+            if (tmp.getProductId().equals(id)) {
+                return tmp;
+            }
+        }
+        return null; // Return null if the product with the specified ID is not found
+    }
     @Override
     public List<Product> findAll() {
         Iterator<Product> productIterator = productRepository.findAll();
