@@ -71,20 +71,17 @@ class ProductRepositoryTest {
     }
     @Test
     void testCreateAndEditProduct() {
-        // Create and add a product to the repository
         Product originalProduct = new Product();
         originalProduct.setProductId("eb558e9f-1c39-460e-8860-71af6af63bd6");
         originalProduct.setProductName("Original Name");
         originalProduct.setProductQuantity(10);
         productRepository.create(originalProduct);
 
-        // Update product details
         Product updatedProduct = new Product();
-        updatedProduct.setProductId(originalProduct.getProductId()); // same ID as original
+        updatedProduct.setProductId(originalProduct.getProductId());
         updatedProduct.setProductName("Updated Name");
         updatedProduct.setProductQuantity(20);
 
-        // Edit the product in the repository
         Product result = productRepository.edit(updatedProduct);
 
         assertEquals(updatedProduct.getProductName(), result.getProductName());
@@ -109,20 +106,17 @@ class ProductRepositoryTest {
     @Test
     void testCreateEditAndDeleteProduct() {
         Iterator<Product> iterator = productRepository.findAll();
-        // Create and add a product to the repository
         Product originalProduct = new Product();
         originalProduct.setProductId("eb558e9f-1c39-460e-8860-71af6af63bd6");
         originalProduct.setProductName("Original Name");
         originalProduct.setProductQuantity(10);
         productRepository.create(originalProduct);
 
-        // Update product details
         Product updatedProduct = new Product();
-        updatedProduct.setProductId(originalProduct.getProductId()); // same ID as original
+        updatedProduct.setProductId(originalProduct.getProductId());
         updatedProduct.setProductName("Updated Name");
         updatedProduct.setProductQuantity(20);
 
-        // Edit the product in the repository
         Product result = productRepository.edit(updatedProduct);
 
         assertEquals(updatedProduct.getProductName(), result.getProductName());
