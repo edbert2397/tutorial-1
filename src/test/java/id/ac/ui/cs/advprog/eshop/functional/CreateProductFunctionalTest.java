@@ -39,7 +39,7 @@ public class CreateProductFunctionalTest {
     }
 
     @Test
-    void pageTitle_isCorrect(ChromeDriver driver) throws Exception {
+    void pageTitleisCorrect(ChromeDriver driver) throws Exception {
         // Exercise
         driver.get(baseUrl);
         String pageTitle = driver.getTitle();
@@ -49,7 +49,7 @@ public class CreateProductFunctionalTest {
     }
 
     @Test
-    void listMessage_listPage_isCorrect(ChromeDriver driver) throws Exception {
+    void WelcomeMessageisCorrect(ChromeDriver driver) throws Exception {
         // Exercise
         driver.get(baseUrl);
         String welcomeMessage = driver.findElement(By.tagName("h2")).getText();
@@ -59,7 +59,7 @@ public class CreateProductFunctionalTest {
     }
 
     @Test
-    void simulation_createProduct_isCorrect(ChromeDriver driver) throws Exception {
+    void createProductisCorrect(ChromeDriver driver) throws Exception {
         driver.get(baseUrl);
 
         WebElement createButton = driver.findElement(By.linkText("Create Product"));
@@ -69,7 +69,7 @@ public class CreateProductFunctionalTest {
         WebElement productNameInput = driver.findElement(By.name("productName"));
         productNameInput.sendKeys(productName);
 
-        int productQuantity = 10;
+        int productQuantity = 100;
         WebElement productQuantityInput = driver.findElement(By.name("productQuantity"));
         productQuantityInput.clear();
         productQuantityInput.sendKeys(Integer.toString(productQuantity));
