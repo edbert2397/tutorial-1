@@ -21,4 +21,4 @@
 
 2
 - Clean code dapat berkurang karena terdapat pengulangan/duplikasi kode mengingat setup procedures dan instance variablesnya mirip atau sama dengan test suite sebelumnya.
-- Menyederhanakan kode menggunakan prinsip "1 fungsi 1 tujuan", setiap fungsi memiliki 1 kegunaannya masing-masing. Sehingga setiap fungsi memiliki 1 kegunaan khusus dan dapat dipanggil secara khusus setiap kali dibutuhkan.
+- Menyederhanakan kode menggunakan prinsip "1 fungsi 1 tujuan", setiap fungsi memiliki kegunaannya masing-masing (seperti memisahkan prosedur setup ke dalam fungsi terpisah). Sehingga setiap fungsi memiliki kegunaan khusus dan dapat dipanggil setiap kali dibutuhkan.
