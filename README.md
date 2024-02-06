@@ -10,5 +10,5 @@
 1. prinsip "_Don't comment bad code, rewrite it_", karena nama variabel, nama fungsi, dan alurnya sudah jelas sehingga tidak membutuhkan komentar.
 
 ## Improve
-Id produk yang belum di-_generate_ menyebabkan produk tersebut tidak bisa di-edit, sehingga saya langsung generate Id produk tersebut dengan random UUID ketika suatu produk dibuat.
-Kedepannya, diperlukan sistem autentikasi dan autorisasi agar akses pengguna dapat diimpelementasikan dengan lebih baik.
+1. Id produk yang belum di-_generate_ menyebabkan produk tersebut tidak bisa di-edit, sehingga saya langsung generate Id produk tersebut dengan random UUID ketika suatu produk dibuat.
+2. Kedepannya, diperlukan sistem autentikasi dan autorisasi agar akses pengguna dapat diimpelementasikan dengan lebih baik.
