@@ -29,7 +29,6 @@ public class ProductServiceImpl implements ProductService {
     }
     public Product edit(Product product) {
         if (product != null) {
-            // You may add validation or additional checks here if needed
             return productRepository.edit(product);
         }
         return null;
@@ -42,8 +41,9 @@ public class ProductServiceImpl implements ProductService {
                 return tmp;
             }
         }
-        return null; // Return null if the product with the specified ID is not found
+        return null;
     }
+
     @Override
     public List<Product> findAll() {
         Iterator<Product> productIterator = productRepository.findAll();
