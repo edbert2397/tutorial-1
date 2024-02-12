@@ -42,7 +42,7 @@ public class CreateProductFunctionalTest {
     }
 
     @Test
-    void WelcomeMessageisCorrect(ChromeDriver driver) throws Exception {
+    void welcomeMessageisCorrect(ChromeDriver driver) throws Exception {
         // Exercise
         driver.get(baseUrl);
         String welcomeMessage = driver.findElement(By.tagName("h2")).getText();
