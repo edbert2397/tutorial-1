@@ -18,16 +18,9 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 @SpringBootTest(webEnvironment = RANDOM_PORT)
 @ExtendWith(SeleniumJupiter.class)
 public class CreateProductFunctionalTest {
-    /**
-     * The port number assigned to the running application during test execution.
-     * Set automatically during each test run by Spring Framework's test context.
-     */
     @LocalServerPort
     private int serverPort;
 
-    /**
-     * The base URL for testing. Default value to {@code http://localhost}.
-     */
     @Value("${app.baseUrl:http://localhost}")
     private String testBaseUrl;
 
@@ -39,7 +32,7 @@ public class CreateProductFunctionalTest {
     }
 
     @Test
-    void pageTitleisCorrect(ChromeDriver driver) throws Exception {
+    void pageTitleIsCorrect(ChromeDriver driver) throws Exception {
         // Exercise
         driver.get(baseUrl);
         String pageTitle = driver.getTitle();
@@ -49,7 +42,7 @@ public class CreateProductFunctionalTest {
     }
 
     @Test
-    void WelcomeMessageisCorrect(ChromeDriver driver) throws Exception {
+    void welcomeMessageIsCorrect(ChromeDriver driver) throws Exception {
         // Exercise
         driver.get(baseUrl);
         String welcomeMessage = driver.findElement(By.tagName("h2")).getText();
