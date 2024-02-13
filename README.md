@@ -1,4 +1,30 @@
-# Exercise 1
+# Tutorial 2
+## 1.List _Quality Code Issues_ yang di fix:
+- ### Rename function name menjadi _camel case naming convention_:
+    Sebelumnya ada beberapa function bawaan yang menggunakan _snake case naming convention_, kemudian saya mengubahnya menjadi mengikuti _camel case naming convention_.
+- ### Mengubah modifier dari class interface service:
+    Saya mengubah modifier yang sebelumnya berupa public menjadi default tanpa public modifier. Class tersebut berupa interface class
+- ### Mengubah import dari annotation *:
+    Sebelumnya salah satu import pada productController saya seperti ini,
+    
+    `import org.springframework.web.bind.annotation.*`
+    
+    Kemudian, saya mengubahnya menjadi seperti ini:
+
+    `import org.springframework.web.bind.annotation.GetMapping;`
+  
+    `import org.springframework.web.bind.annotation.ModelAttribute;`
+  
+    `import org.springframework.web.bind.annotation.PostMapping;`
+    
+    `import org.springframework.web.bind.annotation.RequestMapping;`
+  
+    `import org.springframework.web.bind.annotation.PathVariable;`
+
+## 2. Implementasi kode sekarang sudah memenuhi CI/CD:
+- Menurut saya, implementasi sekarang sudah mengimplementasikan Ci/CD. Dengan menggunakan github workflows, setiap kali terdapat push pada suatu branch, maka proses testing dan deployment akan otomatis terjadi. Setiap kali terjadi push, kode tersebut akan diuji dengan ci.yml dan kemudian diperiksa kebenaran (bukan logika) dari kode tersebut dengan PMD. Setelah itu, kode dapat di merge ke branch main, kemudian akan otomatis ter-deploy ke Paas Koyeb dengan action scorecard.yml. Hal tersebut membentuk CI/CD workflow pada Software Development Lifecycle.
+# Tutorial 1
+## Exercise 1
 ## Implementasi Prinsip _Clean code_:
 ### _Meaningful Names_:
 1. menggunakan nama variabel yang sudah jelas maksudnya, seperti `productId` yang berarti id produk, kemudian juga `productQuantity` yang berarti kuantitas produk.
@@ -13,7 +39,7 @@
 1. Id produk yang belum di-_generate_ menyebabkan produk tersebut tidak bisa di-edit, sehingga saya langsung generate Id produk tersebut dengan random UUID ketika suatu produk dibuat.
 2. Kedepannya, diperlukan sistem autentikasi dan autorisasi agar akses pengguna dapat diimpelementasikan dengan lebih baik.
 
-# Exercise 2
+## Exercise 2
 1
 - Setelah menulis unit test, saya menjadi lebih yakin tentang kebenaran kode yang dibuat karena unit tes membantu menjamin fungsi berjalan dengan baik.
 - Tidak ada aturan mengenai unit test minimum yang diperlukan, namun sebaiknya unit test mencakup skenario-skenario yang dapat terjadi pada fungsi tersebut.
