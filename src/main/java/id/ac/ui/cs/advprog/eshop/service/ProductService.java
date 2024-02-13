@@ -4,11 +4,11 @@ import id.ac.ui.cs.advprog.eshop.model.Product;
 import java.util.List;
 
 public interface ProductService {
-    public Product create(Product product);
-    public List<Product> findAll();
+    Product create(Product product);
+    List<Product> findAll();
 
-    public Product get(String id);
-    public boolean delete(Product product);
-    public Product edit(Product product);
+    Product get(String id);
+    boolean delete(Product product);
+    Product edit(Product product);
 
 }
