@@ -1,9 +1,30 @@
+# Tutorial 3
+## 1.Prinsip yang diaplikasikan
+- ### Single Responsibility Principle
+  Menghapus "extends ProductController" pada CarController karena kedua class tersebut memiiliki fungsi yang saling berbeda, sehingga tidak ada gunanya CarController meng-extend ProductController
+- ### Dependancy Inversion
+  Mengganti tipe data CarServiceImpl menjadi CarService pada file CarController. Hal ini dilakukan agar CarController bergantung pada abstract class nya "CarService" dan bukan "CarServiceImpl", sehingga perubahan pada CarServiceImpl tidak berdapak langsung pada CarController.
+- ### Interface Segregation
+    Kedua interface hanya berhubungan masing-masing ke 1 objek saja yaitu ProductService ke Product dan CarService ke Car. Kedua hal tersebut berupa interface class yang saling terpisah sehingga service yang menggunakannya hanya membutuhkan salah satu diantaranya dan bukan keduanya. Hal ini menyebabkan class yang mengimplement interface tersebut, mengimplementasikan method yang dibutuhkan saja
+- ### Open Close
+    Class dan funtion yang dibuat dapat di extend dan ditambah implementasinya tanpa harus mengubah codebase. Contohnya adalah ProductService sebagai base dan ProductServiceImpl yang akan mengimplementasikan method-method tersebut yang akan digunakan, tetapi masih juga dapat ditambahkan method tambahan.
+## 2. Keunggulan mengimplementasikan prinsip SOLID
+- ### meningkatkan readibility code
+    Code yang terlalu kompleks akan mempersulit pembaca untuk membaca code tersebut. Alangkah lebih mudah jika hal kompleks tersebut dipecah menjadi bagian yang lebih sederhana sehingga yang membacanya pun tidak bingung saat membaca code tersebut. 
+- ### Tambahan fitur dalam code
+    Open Closed principle, method khusus baru dapat ditambahkan tanpa perlu mengubah code base yang sudah ada 
+- ### Perubahan pada satu bagian kode tidak merusak kode pada bagian lain
+    Dependency inversion principle, menggunakan tipe data interface daripada concrete implementation dari interface tersebut. Hal tersebut dilakukan agar kita tidak perlu mengubah CarController secara langsung jika ada perubahan pada CarServiceImpl
+## 3. Kerugian tidak mengimplementasikan SOLID
+- Kode akan lebih sulit dibaca sehingga akan membutuhkan waktu yang lebih lama agar Pembaca mengerti maksud code tersebut
+- Jika melakukan modifikasi pada suatu code, harus memastikan bahwa perubahan code tersebut tidak membuat bagian lain menjadi rusak dan tidak bekerja. 
+- Kode juga akan lebih kotor dan berantakan karena ada bagian yang melakukan berbagai macam sekaligus. Misal pada saat CarController dan ProductController dgabungkan
 # Tutorial 2
 ## 1.List _Quality Code Issues_ yang di fix:
 - ### Rename function name menjadi _camel case naming convention_:
     Sebelumnya ada beberapa function bawaan yang menggunakan _snake case naming convention_, kemudian saya mengubahnya menjadi mengikuti _camel case naming convention_.
 - ### Mengubah modifier dari class interface service:
-    Saya mengubah modifier yang sebelumnya berupa public menjadi default tanpa public modifier. Class tersebut berupa interface class
+    Saya mengubah modifier yang sebelumnya berupa public menjadi default tanpa public modifier. 
 - ### Mengubah import dari annotation *:
     Sebelumnya salah satu import pada productController saya seperti ini,
     
