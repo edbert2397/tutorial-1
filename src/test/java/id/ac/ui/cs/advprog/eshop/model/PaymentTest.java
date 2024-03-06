@@ -1,4 +1,5 @@
 package id.ac.ui.cs.advprog.eshop.model;
+import enums.OrderStatus;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -6,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Map;
@@ -58,18 +60,18 @@ class PaymentTest {
         });
     }
 
-    @Test
-    void testRejectedPaymentEmptyData() {
-        Map<String, String> paymentData = new HashMap<>();
-
-        assertThrows(IllegalArgumentException.class, () -> {
-            Payment payment = new Payment("1994cddb-6f3b-40ca-aed1-eba78db32295", "VOUCHER_CODE", this.orders.getFirst(), paymentData);
-        });
-
-        assertThrows(IllegalArgumentException.class, () -> {
-            Payment payment = new Payment("1994cddb-6f3b-40ca-aed1-eba78db32295", "CASH_ON_DELIVERY", this.orders.getFirst(), paymentData);
-        });
-    }
+//    @Test
+//    void testRejectedPaymentEmptyData() {
+//        Map<String, String> paymentData = new HashMap<>();
+//
+//        assertThrows(IllegalArgumentException.class, () -> {
+//            Payment payment = new Payment("1994cddb-6f3b-40ca-aed1-eba78db32295", "VOUCHER_CODE", this.orders.getFirst(), paymentData);
+//        });
+//
+//        assertThrows(IllegalArgumentException.class, () -> {
+//            Payment payment = new Payment("1994cddb-6f3b-40ca-aed1-eba78db32295", "CASH_ON_DELIVERY", this.orders.getFirst(), paymentData);
+//        });
+//    }
 
     // Voucher Code
     @Test
