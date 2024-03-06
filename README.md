@@ -3,6 +3,9 @@
 ## 1. Refleksi terhadap TTD Flow
 Saya baru pertama kali menggunakan Test-Driven Development (TDD) flow, saya merasa bahwa cara ini sangat berguna. Saya melihat bahwa TDD flow membantu saya dalam mengevaluasi apakah yang dilakukan sudah benar correctness dan maintainability. Saya mengalami kesulitan dalam membuat testing terlebih dahulu. Saya juga kesulitan memeriksa testnya .
 
+## 2. impelentasi FIRST
+Sepertinya saya belum mengikuti FIRST principle. Untuk seterusnya saya akan mulai untuk memikirkan FIRST principle juga ketika membuat test
+
 # Tutorial 3
 ## 1.Prinsip yang diaplikasikan
 - ### Single Responsibility Principle
